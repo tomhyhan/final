@@ -19,7 +19,7 @@ pipeline {
                 sh 'pylint-fail-under --fail_under 7.0 *.py'
             }
         }
-        stage("Code Quality") {
+        stage("Code Quantity") {
             steps {
                 sh "ls *.py | wc -l"
             }
