@@ -28,8 +28,10 @@ pipeline {
             when {
                 expression {params.TEST}
             }
-            steps {
-                sh "python3 test_book_manager.py"
+            post {
+                always {
+                    sh "python3 test_book_manager.py"
+                }
             }
         }
         stage('Zip Artifacts') {
