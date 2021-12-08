@@ -1,7 +1,9 @@
 // test
 pipeline {
     agent any
-
+    parameters {
+        booleanParam(defaultValue: false, description: 'Deploy the App', name: 'DEPLOY')
+    }
     stages {
         stage('Build') {
             steps {
@@ -14,6 +16,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                expression {params.DEPLOY}
+            }
             steps {
                 echo 'Deploying....'
             }
