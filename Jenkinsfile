@@ -28,6 +28,9 @@ pipeline {
             when {
                 expression {params.TEST}
             }
+            steps {
+                echo 'testing stage'
+            }
             post {
                 always {
                     script{
