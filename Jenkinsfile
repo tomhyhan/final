@@ -30,7 +30,9 @@ pipeline {
             }
             post {
                 always {
-                    sh "python3 test_book_manager.py"
+                    script{
+                        sh "python3 test_book_manager.py"
+                    }
                 }
             }
         }
