@@ -39,7 +39,7 @@ pipeline {
                 }
             }
         }
-        stage('Zip Artifacts') {
+        stage('Package') {
             steps {
                 sh 'zip package.zip *.py'
             }
